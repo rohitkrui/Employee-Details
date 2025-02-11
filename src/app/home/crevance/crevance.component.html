@@ -1,5 +1,40 @@
+<div class="main-crevance">
 <div>
     
     <h1> Welcome to {{companyName}}!</h1>
     
+</div>
+<div class="mantra-container">
+    <p class="mantra-text">{{ mantra }}</p>
+  </div>
+
+<div class="home-container">
+    <!-- Hero Section -->
+    <section class="hero">
+      <h1>{{ title }}</h1>
+      <p>{{ description }}</p>
+      <button (click)="navigateToFeatures()">Explore Features</button>
+    </section>
+  
+    <!-- Features Section -->
+    <section class="features">
+      <div class="feature-card">
+        <img src="assets/feature1.png" alt="Feature 1">
+        <h3>Fast & Responsive</h3>
+        <p>Our platform is optimized for speed and efficiency.</p>
+      </div>
+      <div class="feature-card">
+        <img src="assets/feature2.png" alt="Feature 2">
+        <h3>Secure & Reliable</h3>
+        <p>We prioritize security to keep your data safe.</p>
+      </div>
+      <div class="feature-card">
+        <img src="assets/feature3.png" alt="Feature 3">
+        <h3>Easy to Use</h3>
+        <p>Enjoy a user-friendly and intuitive experience.</p>
+      </div>
+    </section>
+  </div>
+ 
+  
 </div>
