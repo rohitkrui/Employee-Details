@@ -1,2 +1,33 @@
-<p>about works!</p>
-<h2>Welcome to the world!</h2>
+<div class="about-container">
+    <!-- Profile Section -->
+    <div class="profile-section">
+      <img src="assets/profile.jpg" alt="Your Photo" class="profile-pic">
+      <h1>{{ fullName }}</h1>
+      <h3>{{ designation }}</h3>
+      <p>{{ tagline }}</p>
+    </div>
+  
+    <!-- About Content -->
+    <div class="about-content">
+      <h2>About Me</h2>
+      <p>{{ aboutDescription }}</p>
+      
+      <h2>Experience</h2>
+      <ul>
+        <li *ngFor="let exp of experiences">{{ exp }}</li>
+      </ul>
+  
+      <h2>Skills</h2>
+      <div class="skills">
+        <span *ngFor="let skill of skills">{{ skill }}</span>
+      </div>
+  
+      <h2>Goals</h2>
+      <p>{{ goals }}</p>
+  
+      <h2>Contact</h2>
+      <p>Email: {{ email }}</p>
+      <p>LinkedIn: <a href="{{ linkedIn }}" target="_blank">{{ linkedIn }}</a></p>
+    </div>
+  </div>
+  
