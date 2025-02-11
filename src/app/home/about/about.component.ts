@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./about.component.css']
 })
 export class AboutComponent {
-  fullName = 'Odin Kumar';
+  fullName = 'Rohit Kumar';
   designation = 'Frontend Developer | Angular  Enthusiast';
   tagline = 'Passionate about building high-performance web applications!';
   
