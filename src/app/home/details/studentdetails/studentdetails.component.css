@@ -1,0 +1,144 @@
+ 
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+form {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin: 10px 0 5px;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+input[type="text"]:focus {
+    border-color: #007bff;
+}
+
+input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    margin-top: 15px;
+    background: #007bff;
+    border: none;
+    color: white;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+input[type="submit"]:hover {
+    background: #0056b3;
+}
+ 
+
+/* ------------------------------------------------ */
+
+/* Style for the product display container */
+.product-display {
+    width: 90%;
+    max-width: 900px;
+    margin: 30px auto;
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Heading Style */
+.product-display h3 {
+    color: #333;
+    margin-bottom: 15px;
+    font-size: 22px;
+}
+
+/* Table Styling */
+#products {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Table Headers */
+#products th {
+    background: #007bff;
+    color: white;
+    text-align: center;
+    padding: 12px;
+}
+
+/* Table Cells */
+#products td {
+    padding: 12px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+    color: #333;
+}
+
+/* Row Hover Effect */
+#products tr:hover {
+    background: #f1f1f1;
+    transition: background 0.3s ease-in-out;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    #products, #products tr, #products td, #products th {
+        display: block;
+        width: 100%;
+    }
+
+    #products tr {
+        margin-bottom: 10px;
+        border-bottom: 2px solid #ddd;
+    }
+
+    #products td {
+        display: flex;
+        justify-content: space-between;
+        padding: 10px;
+        text-align: right;
+    }
+
+    #products td:before {
+        content: attr(data-label);
+        font-weight: bold;
+        text-transform: uppercase;
+        color: #007bff;
+        text-align: left;
+    }
+
+    #products th {
+        display: none;
+    }
+}
+.lengprod{
+    text-align: center;
+    background-color: rgb(163, 165, 42);
+}

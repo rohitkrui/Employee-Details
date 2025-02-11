@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {HttpClientModule} from '@angular/common/http';
+
 
 import { HomeRoutingModule } from './home-routing.module';
 import { CrevanceComponent } from './crevance/crevance.component';
@@ -24,7 +26,7 @@ import { AdmindetailsComponent } from './details/admindetails/admindetails.compo
   ],
   imports: [
     CommonModule,
-    HomeRoutingModule, FormsModule, ReactiveFormsModule
+    HomeRoutingModule,  FormsModule, ReactiveFormsModule, HttpClientModule
   ],
   exports: [
     CrevanceComponent,

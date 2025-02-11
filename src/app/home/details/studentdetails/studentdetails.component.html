@@ -1,1 +1,52 @@
-<p>studentdetails works!</p>
+<div class="req1">
+
+    <h2>Request-1</h2>
+
+    <form #productsForm="ngForm" (ngSubmit)="onProductCreate(productsForm.value)">
+   
+        <label>Product Name: </label>
+        <input type="text" name="pName" ngModel> <br>
+
+        <label>Product Description: </label>
+        <input type="text" name="desc" ngModel>  <br>
+
+        <label>Product Price: </label>
+        <input type="text" name="price" ngModel>  <br>
+
+        <input type="submit" value="Add Product">
+
+    </form>
+</div>
+
+<!-- -------------All Product Display---------------------------- -->
+
+<div class="product-display">
+    <h3>All Products Details</h3>
+
+    <table id="products">
+
+        
+        <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Price</th>
+            <th></th>
+        </tr>
+
+        <tr *ngFor="let prod of allProducts; index as i">
+            <td>{{i + 1}}</td>
+            <td>{{prod.pName}}</td>
+            <td>{{prod.desc}}</td>
+            <td>${{prod.price}}</td>
+            <td><button class="btniclick" (click)="onDeleteProduct(prod.id)">Delete</button></td>
+        </tr>
+
+        <tr class="lengprod" *ngIf="allProducts.length <=1 ">
+            <td>No Product Available</td>
+        </tr>
+
+    </table>
+    <button  (click)="onProductFetch()">Fetch Product</button>
+    <button  (click)="onDeleteAllProducts()">Clear All</button>
+</div>

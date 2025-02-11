@@ -1,0 +1,78 @@
+<div class="container">
+    <h2 class="text-center">User Registration Form</h2>
+  
+    <form [formGroup]="userForm" (ngSubmit)="onSubmit()" class="form-container">
+      
+      <!-- User Name -->
+      <label>User Name:</label>
+      <input type="text" formControlName="userName" class="form-control" placeholder="Enter your name">
+      <small *ngIf="userForm.get('userName')?.touched && userForm.get('userName')?.errors?.['required']" class="text-danger">
+        User Name is required.
+      </small>
+      <small *ngIf="userForm.get('userName')?.touched && userForm.get('userName')?.errors?.['minlength']" class="text-danger">
+        Minimum 3 characters required.
+      </small>
+  
+      <!-- Email -->
+      <label>Email:</label>
+      <input type="email" formControlName="email" class="form-control" placeholder="Enter your email">
+      <small *ngIf="userForm.get('email')?.touched && userForm.get('email')?.errors?.['required']" class="text-danger">
+        Email is required.
+      </small>
+      <small *ngIf="userForm.get('email')?.touched && userForm.get('email')?.errors?.['email']" class="text-danger">
+        Enter a valid email.
+      </small>
+  
+      <!-- Password -->
+      <label>Password:</label>
+      <input type="password" formControlName="password" class="form-control" placeholder="Enter password">
+      <small *ngIf="userForm.get('password')?.touched && userForm.get('password')?.errors?.['required']" class="text-danger">
+        Password is required.
+      </small>
+      <small *ngIf="userForm.get('password')?.touched && userForm.get('password')?.errors?.['minlength']" class="text-danger">
+        Minimum 6 characters required.
+      </small>
+      <small *ngIf="userForm.get('password')?.touched && userForm.get('password')?.errors?.['pattern']" class="text-danger">
+        Must include at least one letter and one number.
+      </small>
+  
+      <!-- DOB -->
+      <label>Date of Birth:</label>
+      <input type="date" formControlName="dob" class="form-control">
+      <small *ngIf="userForm.get('dob')?.touched && userForm.get('dob')?.errors?.['required']" class="text-danger">
+        Date of birth is required.
+      </small>
+  
+      <!-- Gender -->
+      <label>Gender:</label>
+      <select formControlName="gender" class="form-control">
+        <option value="">Select Gender</option>
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+        <option value="other">Other</option>
+      </select>
+      <small *ngIf="userForm.get('gender')?.touched && userForm.get('gender')?.errors?.['required']" class="text-danger">
+        Gender is required.
+      </small>
+  
+      <!-- Hobbies (Dynamic) -->
+      <div *ngFor="let hobby of hobbies.controls; let i = index">
+        <label>Hobby {{ i + 1 }}:</label>
+        <input type="text" [formControl]="getHobbyControl(i)" class="form-control" placeholder="Enter hobby">
+      </div>
+      <button type="button" (click)="addHobby()" class="btn btn-secondary mt-2">➕ Add Hobby</button>
+  
+      <!-- Submit Button -->
+      <button type="submit" class="btn btn-primary mt-3" [disabled]="userForm.invalid">Submit</button>
+      
+      <!-- Display Error Message -->
+      <p *ngIf="formInvalidMessage" class="text-danger mt-2">{{ formInvalidMessage }}</p>
+    </form>
+  
+    <!-- Display Submitted Data -->
+    <div *ngIf="submittedData" class="submitted-data">
+      <h3>✅ Form Submitted Successfully:</h3>
+      <pre>{{ submittedData | json }}</pre>
+    </div>
+  </div>
+  
