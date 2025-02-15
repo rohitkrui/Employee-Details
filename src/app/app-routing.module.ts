@@ -7,16 +7,17 @@ import { ContactComponent } from './home/contact/contact.component';
 import { DetailsComponent } from './home/details/details.component';
 import { AdmindetailsComponent } from './home/details/admindetails/admindetails.component';
 import { StudentdetailsComponent } from './home/details/studentdetails/studentdetails.component';
+import { LoginGuard } from './home/auth.guard';
  
 
 const routes: Routes = [
   { path: 'crevance', component: CrevanceComponent },
   {path: 'about', component: AboutComponent},
-  {path: 'login', component: LoginComponent},
+  { path: 'login', component: LoginComponent, canActivate: [LoginGuard] },
 
   {
     path: 'contact',
-    component: ContactComponent,
+    component: ContactComponent, canActivate: [LoginGuard],
     children: [
       { path: 'admin-details', component: AdmindetailsComponent }
     ]
